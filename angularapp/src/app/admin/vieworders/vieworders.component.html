@@ -1,0 +1,55 @@
+<app-admin-nav-bar></app-admin-nav-bar>
+
+<div class="container" style="padding-bottom: 5rem;">
+  <h3 style="text-align: center; margin: 1rem 0;">Orders</h3>
+
+  <div class="custom-card-header">
+    <div class="card-item item-1">
+      <p>Order Id</p>
+    </div>
+    <div class="card-item item-2">
+      <p>User Id</p>
+    </div>
+    <div class="card-item item-3">
+      <p>Product Name</p>
+    </div>
+    <div class="card-item item-4">
+      <p>Product Price</p>
+    </div>
+    <div class="card-item item-5">
+      <p>Product Quantity Ordered</p>
+    </div>
+    <!-- <div class="card-item item-6">
+      <p>Edit Order Status</p>
+    </div> -->
+  </div>
+
+  <div class="custom-card-body" *ngFor="let order of orderInformation">
+    <div class="card-item item-1">
+      <p>{{ order.orderId }}</p>
+    </div>
+    <div class="card-item item-2">
+      <p>{{ order.user.user_id }}</p>
+    </div>
+    <div class="card-item item-3">
+      <p>{{ order.product.productName }}</p>
+    </div>
+    <div class="card-item item-4">
+      <p>{{ order.price }} ₹ </p>
+    </div>
+    <div class="card-item item-5">
+      <p>{{ order.quantity }}</p>
+    </div>
+    <!-- <div class="card-item item-6">
+      <button class="btn btn-primary" (click)="editStatus = !editStatus" *ngIf="editStatus">Edit Status</button>
+      <form *ngIf="!editStatus" >
+        <input type="text" placeholder="new status" class="form-control" style="margin-bottom: 10px;">
+        <div class="config-container">
+          <button class="btn btn-primary">Save</button>
+          <button class="btn btn-danger" (click)="editStatus = !editStatus">Undo</button>
+        </div>
+      </form>
+    </div> -->
+  </div>
+</div>
+
