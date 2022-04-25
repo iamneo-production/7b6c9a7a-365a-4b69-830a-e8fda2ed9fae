@@ -1,0 +1,76 @@
+<div>
+    <div *ngIf="otpSent == false && otpVerified == false && otpVerificationFailed == false">
+        <p>Otp Verification</p>
+        <form
+            (ngSubmit)="sendOtpToEmail(f)"
+            #f="ngForm"
+        >
+            <input
+                class="form-control"
+                type="text"
+                placeholder="enter email"
+                ngModel
+                name="email"
+                autocomplete="off"
+            >
+            <button
+                type="submit"
+                class="btn btn-primary mt-3"
+                [disabled]="f.value.email == ''"
+            >
+                Send Otp
+            </button>
+        </form>
+    </div>
+    <div *ngIf="otpSent == true && otpVerified == false && otpVerificationFailed == false">
+        <form
+            (ngSubmit)="verifyUserOtp(g)"
+            #g="ngForm"
+        >
+            <input
+                type="text"
+                placeholder="enter otp"
+                class="form-control"
+                ngModel
+                name="otp"
+                autocomplete="off"
+            >
+            <button
+                type="submit"
+                class="btn btn-primary mt-3"
+                [disabled]="g.value.otp == ''"
+            >
+                Verify
+            </button>
+            <button
+                type="button"
+                class="btn btn-primary mt-3"
+                [ngStyle]="{'margin-left': '1rem'}"
+                (click)="resetToInitial()"
+            >
+                Reset
+            </button>
+        </form>
+    </div>
+    <div *ngIf="otpVerificationFailed">
+        <div class="alert alert-danger" role="alert">
+            OTP Verification Failed!
+          </div>
+        <button
+            class="btn btn-primary"
+            (click)="resetToInitial()"
+        >
+            Resend
+        </button>
+    </div>
+    <div *ngIf="otpVerified">
+
+        <p>
+            <i
+                class="far fa-check-circle fa-lg"
+                [ngStyle]="{color: 'green'}"
+            ></i>
+            Email Verified
+        </p>
+    </div>
+</div>
