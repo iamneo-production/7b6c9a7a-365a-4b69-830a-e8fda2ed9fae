@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <section class="header">
+        <div class="navbar">
+            <a class="logo">Bait N Tackle</a>
+            <div class="navbar-right">
+              <a routerLink="" class="active">Home</a>
+              <a (click)="about()"> About <i class='fas fa-blog'></i></a>
+              <a (click)="orders()"> Orders <i class="fas fa-fish"></i></a>
+              <a (click)="cart()" >  My Cart <i class='fas fa-cart-arrow-down'></i> </a>
+              <a (click)="contact()"> Contact  <i class="fas fa-address-card"></i> </a>
+              <a (click)="logAlert()"> log out <i class="fas fa-power-off"></i></a>
+            </div>
+          </div>
+    
+        <h1>The Fish Specialist</h1>
+        <p>Getting a taste of the ocean’s bounty.</p>
+  <!--button-->  
+  <div class="wrapper">
+    <button class="a1" (click)="temp()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Shop Now <i class="fa fa-shopping-bag"></i>
+      </button>
+  </div>
+ 
+        <br><br><br><br><br><br><br> 
+    </section>
+    
+<!--features -->
+<section class=features>                         
+        <h1>Hot Selling <i class='fas fa-balance-scale-right' style='font-size:36px'></i></h1> 
+        <br>                                                <!--special offers-->
+        <div class="container">
+        <div class="row">
+        <div class="col-md-4">
+            <div class="feature-box">
+            <div class="feature-img">
+            <img src="assets/images/Katla.jpg">
+            <div class="price">
+                <p>₹950</p>                                     <!--  ₹  -->
+            </div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-o"></i>
+            </div>
+            </div> 
+            <div class="feature-details">
+                <h4>Katla (Indian Carp)</h4>
+                <p>Catla is a fish with large and broad head,Catla at the age of two years weights an average weight of 2kg & large protruding lower jaw, and upturned mouth. It has large, greyish scales on its dorsal side and whitish on its belly. It reaches up to 182 cm in length and 38.6kg in weight.</p>
+                <div>
+                    <span><i class="fas fa-map-marker"></i> India</span>
+                </div>
+            </div>  
+            </div>
+        </div>  
+        <div class="col-md-4">
+            <div class="feature-box">
+                <div class="feature-img">
+                <img src="assets/images/paarai.jpg">
+                <div class="price">
+                    <p>₹724</p>   
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                </div>
+            </div>                    
+                <div class="feature-details">
+                    <h4>Paarai</h4>
+                    <p>The Indian mackerel (paarai) is a species of mackerel in the scombrid family of order Perciformes.It is commonly found in the Indian and West Pacific oceans, and their surrounding seas. It is an important food fish and is commonly used in South and South-East Asian cuisine.</p>
+                    <div>
+                        <span><i class="fas fa-map-marker"></i> India</span>   
+                    </div>
+                </div>  
+                </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-box">
+                <div class="feature-img">
+                <img src="assets/images/vanjaram.jpg">
+                <div class="price">
+                <p>₹999</p>  
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                </div> 
+                <div class="feature-details">
+                    <h4>Vanjaram</h4>
+                    <p>Indo-Pacific king mackerel or popularly (spotted) seer fish,Seer fish is a delicacy in several regions of India. In Tamil Nadu and Andhra Pradesh, this fish is called "Vanjaram" in Tamil/Telugu as well as "Shermai" among Dakhni people and is usually the costliest variety available.</p>
+                    <div>
+                        <span><i class="fas fa-map-marker"></i> India</span>
+                    </div>
+                </div>  
+                </div>
+            </div>
+        </div>   
+    </div>  
+</section>
+<!--Feature Ends-->
+
+
+<!--gallery Starts-->   
+<section class="gallery">
+    <h1>Special Offers</h1>
+       <!-- <Button>Open <i class="fas fa-angle-double-right"></i> </Button> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="gallery-box">
+                        <a> <img src="assets/images/vanjaram1.jpg"></a>
+                    <h4>Vanjaram</h4>   
+            </div>  
+        </div> 
+        <div class="col-md-3">
+            <div class="gallery-box">
+                <a><img src="assets/images/prawn.jpg"></a>
+                <h4>Prawns</h4>   
+            </div>  
+        </div> 
+        <div class="col-md-3">
+            <div class="gallery-box">
+                <a><img src="assets/images/crab.jpg"></a>
+                <h4>Crabs</h4>   
+            </div>  
+        </div> 
+        <div class="col-md-3">
+            <div class="gallery-box">
+                <a><img src="assets/images/mathai11.jpg"></a>
+                <h4>Mathai</h4>   
+            </div>  
+        </div>  
+        </div>
+        </div>
+</section>
+<!--gallery ends-->
+
+<!--Banner  starts-->
+<section class="banner">  <!--bg--> 
+    <div class="banner-highlights"> <!--black board-->
+        <div class="containerbb"> <!--black board inside content-->
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>Get 50% offer Only on  Today's Special</h2>
+                    <h5>Add to Cart Soon  and avail 50% flat discount.</h5>
+                </div>
+                <div class="col-md-4">
+                    <div class="wrapper">
+                        <button class="a1" (click)="temp()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Shop Now <i class="fa fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div> <br><br><br><br> <!--to make the highlight proper visible-->
+</section>
+<!--Banner  ends-->
+
+<!-- user reviewz -->
+<section class="users-feedback">
+    <h1>Hear it from our customers</h1> <i class=""></i>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                 <div class="user-review">
+                    <p>What a website, the User interface is totally wonderful. A must use website,if you are going to buy the great fishes of the world.</p> 
+                    <h5>User1798</h5>  
+                    <small>Coimbatore</small>
+                 </div>
+                 <img src="assets/images/user.jpg">
+            </div>
+            <div class="col-md-4">
+                <div class="user-review">
+                    <p>There are many website in this world where you go once and you don't get what u need.But the Offers offered by them and the Quality of Fishes makes me to go again.Nice UI and its User-frndly.</p> 
+                    <h5>Mr.Santosh Thomas</h5>  
+                    <small>Chennai</small>
+                 </div>
+                 <img src="assets/images/kamal.jpg">
+            </div>
+            <div class="col-md-4">
+                <div class="user-review">
+                    <p>This time we ate at The Lobster by the which i bought on offer. The service is impeccable, the ocean Foods are fabulous,delicious.</p> 
+                    <h5>Mrs.Mohana Priya</h5>  
+                    <small>Kanyakumari</small>
+                 </div>
+                 <img src="assets/images/shriya.jpg">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- user reviewz ends-->
+
+<!-- Footer -->
+<section class="footer">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Bait N Tackle </h2>
+            <p>In a short span of Time, we have been successful in breaking even. We deliver to more than 12,000 customers in a 30-day cycle. We started with 12 Stock Keeping Units in December 2020 and currently have over 60-Units and are expanding</p>
+        </div>
+        <div class="col-md-3">
+            <h4>Features</h4>
+            <p><i class="fab fa-ideal"></i> Deals and Offers</p>
+            <p><i class="fas fa-car-side"></i> Tracking Facilities</p>	
+            <p><i class="glyphicon glyphicon-refresh"></i> Cancelation Policy</p>
+            <p><i class="glyphicon glyphicon-user"></i> Customer Review</p>
+        </div>
+        <div class="col-md-3">
+            <h4>Quick Contact</h4>
+            <p><i class="fas fa-phone-square"></i> +91 9876543210</p>
+            <p><i class="fas fa-envelope"></i> B1JA02@gmail</p>
+            <p><i class="fas fa-home"></i> Chennai,Tamil Nadu</p>
+        </div>
+        <div class="col-md-3">
+            <h4>Follow us on</h4>
+            <p><i class="fab fa-facebook"></i> Facebook</p>
+            <p><i class="fab fa-youtube"></i> Youtube</p>
+            <p><i class="fab fa-twitter"></i> Twitter</p>
+        </div>
+        
+    </div><hr>
+          <p class="copyright">Made with <i class="fa fa-heart"></i> by B1JA02 </p>
+    </div>
+    </section>
+<!-- Footer ends -->
+
+</body>
+</html>
