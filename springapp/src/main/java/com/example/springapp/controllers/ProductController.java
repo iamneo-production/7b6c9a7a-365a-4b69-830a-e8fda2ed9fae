@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.example.BaitAndTackleModified.entities.OrderEntity;
-import com.example.BaitAndTackleModified.entities.ProductEntity;
-import com.example.BaitAndTackleModified.repositorys.OrderRepository;
-import com.example.BaitAndTackleModified.repositorys.ProductRepository;
+import com.example.springapp.entities.OrderEntity;
+import com.example.springapp.entities.ProductEntity;
+import com.example.springapp.repositorys.OrderRepository;
+import com.example.springapp.repositorys.ProductRepository;
 
 
 @RestController
 public class ProductController {
-    
+
 	@Autowired ProductRepository productRepository;
 	@Autowired OrderRepository orderRepository;
 	

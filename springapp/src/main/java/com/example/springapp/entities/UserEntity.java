@@ -1,4 +1,4 @@
-package com.example.BaitAndTackleModified.entities;
+package com.example.springapp.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
