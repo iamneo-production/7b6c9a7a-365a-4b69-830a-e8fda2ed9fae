@@ -1,0 +1,24 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.3rem;
+  background-color: black;
+}
+
+.nav-left-custom {
+  display: flex;
+  flex-direction: row;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  padding: 1.5rem;
+  padding-bottom: 1.4rem;
+  border-right: .5px solid black;
+}
+
+a:hover, .active{
+  background-color: #0275d8;
+}

@@ -1,0 +1,112 @@
+p {
+  margin: 0;
+}
+
+
+
+.custom-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  padding-bottom: 4rem;
+
+}
+
+
+
+.left-box-flex-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  text-align: center;
+}
+
+.product-headers .flex-item {
+  width: 20%;
+}
+
+.product-item .flex-item {
+  width: 20%;
+}
+
+.product-item {
+  height: 200px;
+}
+
+.image-container {
+  height: 200px;
+  padding: .3rem 0;
+}
+
+img {
+  height: 100%;
+}
+
+.product-headers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-around; */
+  box-shadow: 0 0 8px 5px grey;
+  margin: 1rem 0;
+  padding: .3rem 0;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 0 8px 5px grey ;
+  margin: 1rem 0;
+}
+
+.configs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.configs .btn {
+  margin: .3rem 0;
+}
+
+.left-box-flex-container .flex-item {
+  border-left: 1px solid black;
+}
+
+app-product-item {
+  display: contents;
+}
+
+
+
+/* Right side container styles */
+
+h3 {
+  text-align: center;
+}
+
+.right-box-flex-container {
+  width: 40%;
+  padding: 0 2rem;
+  align-self: start;
+}
+
+form {
+  box-shadow: 0 0 8px 5px grey ;
+  padding: 1rem .3rem;
+  border-radius: 2px;
+}
+
+.right-box-flex-container .form-control {
+  margin: .6rem 0;
+}
+
+.right-box-flex-container form .flex-item:nth-child(6) {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

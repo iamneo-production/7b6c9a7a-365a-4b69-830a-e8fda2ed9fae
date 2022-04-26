@@ -1,0 +1,121 @@
+<app-admin-nav-bar></app-admin-nav-bar>
+<h3 style="text-align: center; margin-top: 2rem;">Product Cataloge</h3>
+<div class="custom-container">
+    <div class="left-box-flex-container">
+        <div class="product-headers">
+            <div class="flex-item">
+                <p>Product Image</p>
+            </div>
+            <div class="flex-item">
+                <p>Name</p>
+            </div>
+            <div class="flex-item">
+                <p>Rate (1 Kg) </p>
+            </div>
+            <div class="flex-item">
+                <p>Stock</p>
+            </div>
+            <div class="flex-item">
+                <p>Config</p>
+            </div>
+        </div>
+        <div class="product-item" *ngFor="let product of productsInformation  | paginate: { id: 'test',
+            itemsPerPage: 3,
+            currentPage: currentPage,
+            totalItems: productsInformation.length}; let i = index">
+            <div class="image-container flex-item" style="padding: 20px;">
+                <img
+                    src={{product.productImageUrl}}
+                    alt="image not found"
+                    class="img-fluid"
+                >
+            </div>
+            <div class="product-name flex-item">
+                <p>{{product.productName}}</p>
+            </div>
+            <div class="product-price flex-item">
+                <p>{{product.price}}</p>
+            </div>
+            <div class="product-quantity flex-item">
+                <p>{{product.stockQuantity}}</p>
+            </div>
+            <div class="flex-item configs">
+                <div class="btn btn-primary" (click)="modifyClickEvent(i)">Modify Product</div>
+                <div class="btn btn-danger" (click)="deleteClickEvent(i)">Delete Product</div>
+            </div>
+        </div>
+        <div class="pagination-div" style="margin-top: 2rem;">
+            <pagination-controls
+                id="test"
+                (pageChange)="currentPage = $event"
+                (pageBoundsCorrection)="currentPage = $event"
+                [maxSize]="5"
+                [directionLinks]="true"
+                [autoHide]="true"
+                [responsive]="true"
+                previousLabel="Previous"
+                nextLabel="Next"
+                screenReaderPaginationLabel="Pagination"
+                screenReaderPageLabel="page"
+                screenReaderCurrentLabel="You're on page"
+            >
+            </pagination-controls>
+        </div>
+    </div>
+    <div class="right-box-flex-container">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm"> 
+            <h3 *ngIf="showAddProductForm">Add Product</h3>
+            <h3 *ngIf="!showAddProductForm">Modify Product</h3>
+            <div class="flex-item">
+                <input
+                    type="text"
+                    placeholder="enter price"
+                    class="form-control"
+                    name="price"
+                    [(ngModel)]="price"
+                >
+            </div>
+            <div class="flex-item">
+                <input
+                    type="text"
+                    placeholder="enter url"
+                    class="form-control"
+                    name="productImageUrl"
+                    [(ngModel)]="url"
+
+                >
+            </div>
+            <div class="flex-item">
+                <input
+                    type="text"
+                    placeholder="enter name"
+                    class="form-control"
+                    name="productName"
+                    [(ngModel)]="name"
+                >
+            </div>
+            <div class="flex-item">
+                <input
+                    type="text"
+                    placeholder="enter stock"
+                    class="form-control"
+                    name="stockQuantity"
+                    [(ngModel)]="stock"
+                >
+            </div>
+            <div class="flex-item" *ngIf="showAddProductForm">
+                <button class="btn btn-primary" type="submit">Save</button>
+            </div>
+            <div class="flex-item" *ngIf="!showAddProductForm">
+                <button class="btn btn-primary" style="margin-right: 1rem;" type="submit">Save</button>
+                <button class="btn btn-danger" (click)="showAddProductForm = !showAddProductForm; f.reset()">Undo</button>
+                
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+
+<!-- [ngClass]="{'is-invalid': f.controls?.['price']?.touched ? true: false}" -->
