@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.BaitAndTackleModified.entities.CartEntity;
-import com.example.BaitAndTackleModified.entities.OrderEntity;
-import com.example.BaitAndTackleModified.entities.ProductEntity;
-import com.example.BaitAndTackleModified.entities.UserEntity;
-import com.example.BaitAndTackleModified.repositorys.CartRepository;
-import com.example.BaitAndTackleModified.repositorys.OrderRepository;
-import com.example.BaitAndTackleModified.repositorys.ProductRepository;
-import com.example.BaitAndTackleModified.repositorys.UserRepository;
-import com.example.BaitAndTackleModified.utils.OrderUtils;
+import com.example.springapp.entities.CartEntity;
+import com.example.springapp.entities.OrderEntity;
+import com.example.springapp.entities.ProductEntity;
+import com.example.springapp.entities.UserEntity;
+import com.example.springapp.repositorys.CartRepository;
+import com.example.springapp.repositorys.OrderRepository;
+import com.example.springapp.repositorys.ProductRepository;
+import com.example.springapp.repositorys.UserRepository;
+import com.example.springapp.utils.OrderUtils;
 
 @RestController
 public class OrderController {

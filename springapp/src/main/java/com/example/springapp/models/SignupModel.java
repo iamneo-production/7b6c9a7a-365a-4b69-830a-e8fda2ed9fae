@@ -1,4 +1,4 @@
-package com.example.BaitAndTackleModified.models;
+package com.example.springapp.models;
 
 public class SignupModel {
 	
