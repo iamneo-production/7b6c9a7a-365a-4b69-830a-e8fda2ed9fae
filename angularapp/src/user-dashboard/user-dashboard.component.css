@@ -1,0 +1,40 @@
+.card {
+  padding: 1rem;
+
+  margin: .3rem;
+}
+
+.cstm-image-container {
+  height: 70%;
+  width: 18rem;
+  padding: 1rem;
+}
+
+.cstm-img-resize {
+  width: 100%;
+  height: 150px;
+}
+
+
+
+.cstm-product-items {
+  /* display: flex;
+  flex-direction: row; */
+}
+
+.row {
+  margin: 0 2rem;
+}
+.cstm-dashboard-heading {
+  margin: 2rem 1rem 2rem 1rem;
+  text-align: center;
+}
+
+
+.custom-footer {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
