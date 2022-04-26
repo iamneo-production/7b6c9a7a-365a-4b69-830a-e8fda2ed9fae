@@ -1,0 +1,92 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+    <h4 [ngStyle]="{'font-family' :'cursive','text-align': 'center', 'marginTop': '2rem', 'marginBottom': '2rem'}">Items in your cart</h4>
+
+    <div
+        class="cart-card"
+        *ngFor="let cartItem of cartItems | paginate: { id: 'foo',
+        itemsPerPage: 2,
+        currentPage: currentPage,
+        totalItems: cartItems.length}"
+    >
+        <!-- <div class="cart-header">
+      <p>Item image</p>
+      <p>Item Name</p>
+      <p>Item Configuration</p>
+      <p>Delete Item</p>
+    </div> -->
+        <div class="cart-body">
+            <div class="product-image">
+                <img
+                    src={{cartItem.product.productImageUrl}}
+                    alt="temp"
+                >
+            </div>
+            <div class="product-name">
+                <p>{{cartItem.product.productName}}</p>
+            </div>
+            <div class="product-rate" >
+                <p>Rate:  {{cartItem.price}} ₹ </p>
+            </div>
+            <div class="product-config">
+                <i
+                    class="bi bi-plus-circle-fill fa-2x"
+                    (click)="addItemToCart(cartItem.cart_id)"
+                ></i>
+                <p style="font-size: x-large; margin: 0 .2rem; font-weight: bold;">{{cartItem.quantity}}</p>
+                <i
+                    class="bi bi-dash-circle-fill fa-2x"
+                    (click)="removeItemFromCart(cartItem.cart_id)"
+                ></i>
+            </div>
+            <div class="delete-product">
+                <i
+                    style='font-size:28px;color:red'
+                    (click)="deleteCartItem(cartItem.cart_id)"
+                    class="bi bi-trash fa-2x "
+                ></i>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="price">
+                <!-- <p>Rate: {{cartItem.price}} </p> -->
+                <p>
+                    Total : {{cartItem.price * cartItem.quantity}} ₹ 
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="pagination-div">
+        <pagination-controls
+            id="foo"
+            (pageChange)="currentPage = $event"
+            (pageBoundsCorrection)="currentPage = $event"
+            [maxSize]="3"
+            [directionLinks]="true"
+            [autoHide]="true"
+            [responsive]="true"
+            previousLabel="Previous"
+            nextLabel="Next"
+            screenReaderPaginationLabel="Pagination"
+            screenReaderPageLabel="page"
+            screenReaderCurrentLabel="You're on page"
+        >
+        </pagination-controls>
+    </div>
+    <div
+        class="pay-items"
+        *ngIf="cartItems.length > 0"
+    >
+        <p>Total Amount: {{totalAmount}} ₹ </p>
+        <button
+            type="button"
+            class="btn btn-outline-primary"
+            (click)="executeOrderItems()"
+        >
+            Pay
+        </button>
+    </div>
+</div>
+
+<!-- <div class="item-delete "><i name="trash-outline"></i></div> -->
