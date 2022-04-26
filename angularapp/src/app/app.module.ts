@@ -8,49 +8,49 @@ import { AppComponent } from './app.component';
 import { SigninService } from './services/signin.service';
 import { SigninComponent } from './signin/signin.component';
 import { RestServices } from './services/rest.service';
-// import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './signup/signup.component';
 import { OtpComponent } from './otp/otp.component';
 import { OtpServices } from './services/otp.service';
-// import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-// import { NavBarComponent } from './nav-bar/nav-bar.component';
-// import { ProductServices } from './services/product.service';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ProductServices } from './services/product.service';
 import { AuthGuardService } from './auth/auth.guard';
 import { UserModel } from './auth/user.model';
 import { LoginActivate } from './auth/autologin.guard';
 // import { FooterComponent } from './footer/footer.component';
-// import { CartComponent } from './cart/cart.component';
-import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CartComponent } from './cart/cart.component';
+// import { ToastrModule } from 'ngx-toastr';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { CartService } from './services/cart.service';
-import { NgxPaginationModule} from 'ngx-pagination';
-// import { OrdersComponent } from './orders-component/orders-component';
-import { OrderServices } from './services/order.service';
-// import { SwalServices } from './services/swal.service';
-// import { DashboardComponent } from './admin/dashboard/dashboard.component';
+// import { NgxPaginationModule} from 'ngx-pagination';
+import { OrdersComponent } from './orders-component/orders-component';
+// import { OrderServices } from './services/order.service';
+import { SwalServices } from './services/swal.service';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminServices } from './services/admin.service';
-// import { AdminNavBarComponent } from './admin/admin-nav-bar/admin-nav-bar.component';
+import { AdminNavBarComponent } from './admin/admin-nav-bar/admin-nav-bar.component';
 import { AdminAuthGuard } from './auth/adminAuth.guard';
 import { ViewordersComponent } from './admin/vieworders/vieworders.component';
 // import { DialogComponent } from './dialog/dialog.component';
-// import { FeedbackComponent } from './admin/feedback/feedback.component';
+import { FeedbackComponent } from './admin/feedback/feedback.component';
 
 
 @NgModule({
   declarations: [
-    // AppComponent,
+    AppComponent,
     SigninComponent,
-    // SignupComponent,
+    SignupComponent,
     OtpComponent,
-    // UserDashboardComponent,
-    // NavBarComponent,
-    // FooterComponent,
-    // CartComponent,
-    // OrdersComponent,
-    // DashboardComponent,
-    // AdminNavBarComponent,
+    UserDashboardComponent,
+    NavBarComponent,
+    FooterComponent,
+    CartComponent,
+    OrdersComponent,
+    DashboardComponent,
+    AdminNavBarComponent,
     ViewordersComponent,
-    // DialogComponent,
-    // FeedbackComponent,
+    DialogComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,11 +74,11 @@ import { ViewordersComponent } from './admin/vieworders/vieworders.component';
     SigninService,
     RestServices,
     OtpServices,
-    // ProductServices,
+    ProductServices,
     AuthGuardService,
-    // CartService,
+    CartService,
     OrderServices,
-    // SwalServices,
+    SwalServices,
     UserModel,
     LoginActivate,
     AdminAuthGuard,
