@@ -1,0 +1,55 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+    <h4 [ngStyle]="{'font-family' :'cursive','text-align': 'center', 'marginTop': '2rem', 'marginBottom': '2rem'}">Items you ordered</h4>
+    <div
+        class="order-card"
+        *ngFor="let order of ordersInformation | paginate: { id: 'foo',
+          itemsPerPage: 2,
+          currentPage: currentPage,
+          totalItems: ordersInformation.length}"
+    >
+        <div class="order-body">
+            <div class="product-image">
+                <img
+                    [src]="order.product.productImageUrl"
+                    alt="not found"
+                >
+            </div>
+            <div class="product-quantity">
+                <p style="font-weight: bold;">Total Units Ordered</p>
+                <p>{{ order.quantity }}</p>
+            </div>
+            <div class="product-individual-cost">
+                <p style="font-weight: bold;">Individual Quantity Price</p>
+                <p>{{ order.price }} ₹ </p>
+            </div>
+            <div class="order-status">
+                <p style="font-weight: bold;">Order Status</p>
+                <p>{{ order.status}}</p>
+            </div>
+        </div>
+        <div class="order-footer">
+            <div class="total-price">
+                <p>{{ order.totalPrice }}  ₹ </p>
+            </div>
+        </div>
+    </div>
+    <div class="pagination-div" style="margin-top: 2rem;">
+      <pagination-controls
+          id="foo"
+          (pageChange)="currentPage = $event"
+          (pageBoundsCorrection)="currentPage = $event"
+          [maxSize]="3"
+          [directionLinks]="true"
+          [autoHide]="true"
+          [responsive]="true"
+          previousLabel="Previous"
+          nextLabel="Next"
+          screenReaderPaginationLabel="Pagination"
+          screenReaderPageLabel="page"
+          screenReaderCurrentLabel="You're on page"
+      >
+      </pagination-controls>
+  </div>
+</div>
