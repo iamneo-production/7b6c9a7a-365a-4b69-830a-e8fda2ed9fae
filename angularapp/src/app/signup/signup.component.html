@@ -1,0 +1,97 @@
+<!-- <section id="signup-header">
+    <div class="custom-signup-header-body">
+        <p class="custom-main-heading">FISH MARKET</p>
+    </div>
+</section> -->
+<section id="signup-body">
+
+    <div class="container">
+        <div class="custom-left-child">
+          <h3 [ngStyle]="{'text-align': 'center'}">SIGN UP!</h3>
+          <form autocomplete="off" (ngSubmit)="formSubmitted(formData)" #formData="ngForm">
+              <div class="form-group custom-margin-1rem">
+                  <input
+                      type="email"
+                      class="form-control input-design"
+                      [ngClass]="{ 'is-invalid': formData?.controls?.['email']?.touched ? !validateEmail(formData.value.email) : false}"
+                      aria-describedby="emailHelp"
+                      placeholder="Enter email"
+                      ngModel
+                      name="email"
+                  >
+              </div>
+              <div class="form-group custom-margin-1rem">
+                  <input
+                      type="password"
+                      class="form-control input-design"
+                      [ngClass]="{ 'is-invalid': formData?.controls?.['password']?.touched ? !validatePassword(formData.value.password) : false}"
+                      placeholder="Password"
+                      ngModel
+                      name="password"
+                  >
+              </div>
+              <div class="form-group custom-margin-1rem">
+                  <input
+                      type="password"
+                      class="form-control input-design"
+                      [ngClass]="{'is-invalid': formData?.controls?.['conformPassword']?.touched ? !validateConformPassword(formData.value.password, formData.value.conformPassword) : false}"
+                      placeholder="confirm password"
+                      ngModel
+                      name="conformPassword"
+                  >
+              </div>
+              <div class="form-group custom-margin-1rem">
+                  <input
+                      type="text"
+                      class="form-control input-design"
+                      [ngClass]="{'is-invalid': formData?.controls?.['contact']?.touched ? !validateContact(formData.value.contact) : false}"
+                      placeholder="contact"
+                      ngModel
+                      name="contact"
+                  >
+              </div>
+              <div class="form-group custom-margin-1rem">
+                  <input
+                      type="text"
+                      class="form-control input-design"
+                      [ngClass]="{'is-invalid': formData?.controls?.['username']?.touched ? !validateUserName(formData.value.username) : false}"
+                      placeholder="Username"
+                      ngModel
+                      name="username"
+                  >
+              </div>
+              <div class = "custom-margin-1rem">
+                  <p class="cm-0">Gender</p>
+                  <div class="radio" *ngFor="let gender of genders" [ngStyle]="{'margin-left': '30px'}">
+                    <label >
+                      <input type="radio" name="gender" ngModel [value]="gender">
+                      {{ gender }}
+                    </label>
+                  </div>  
+              </div>
+              <!-- <div class = "custom-margin-1rem">
+                  <app-otp></app-otp>
+              </div> -->
+              <div class="form-group custom-margin-1rem">
+                  <a
+                      routerLink="/users/login"
+                      class="link-secondary"
+                  >
+                      Have an account? Sign in here!
+                  </a>
+              </div>
+              <button
+                  type="submit"
+                  class="btn btn-primary custom-margin-1rem"
+                  [disabled]="!(validateEntireForm(formData) && emailVerified)"
+              >
+                  Submit
+              </button>
+          </form>
+        </div>
+        <div class="custom-right-child">
+          <img src="/assets/images/signup_vector.jpg" alt="">
+          <!-- <h1>hello</h1> -->
+        </div>
+    </div>
+</section>
