@@ -47,4 +47,48 @@ public class UserController {
 		}
 		return false;
 	}
+	/*
+	 * Getting data perfectly from angular
+	 * OBJECTIVES
+	 * 1. Validate the data
+	 * 2. Hash the password
+	 * 3. Store the data in the database
+	 * 4. Return the message from the response generator
+	 * */
+	@CrossOrigin
+	@PostMapping("/signup") 
+	public Object userSignup(@RequestBody UserEntity userData) {
+		UserEntity storedUserObject;
+		try {
+//			System.out.println(userData.toString());
+//			UserEntity dummyUserObject = new UserEntity("umakanthpendyala@gmail.com", "12345678", "9440622045", "umakanth", "Male");
+			if (userRepository.findByEmail(userData.getEmail()) == null)  {
+				storedUserObject = userRepository.save(userData);
+			} else return false;
+			HashMap<String, Object> wrapper = new HashMap<String, Object>();
+			wrapper.put("userId", storedUserObject.getUser_id());
+			wrapper.put("validUser", true);
+			return wrapper;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	
+	@GetMapping("/getUser") 
+	public Object getUser() {
+		return false;
+	}
+	
+	
+	@PutMapping("/updateUser")
+	public Boolean updateUser() {
+		return false;
+	}
+	
+	
+	@DeleteMapping("/deleteUser")
+	public Boolean deleteUser() {
+		return false;
+	}
 }
